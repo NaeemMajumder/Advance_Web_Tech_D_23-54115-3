@@ -3,9 +3,9 @@ function processOrder(){
         console.log("Processing order....");
 
         setTimeout(()=>{
-            const success=true;
+            const isSuccess=true;
 
-            if(success){
+            if(isSuccess){
                 resolve({
                     orderId:42017,
                     customer:"Naeem",
@@ -20,15 +20,15 @@ function processOrder(){
     });
 }
 
-processOrder().then((order)=>{
-    console.log("Order ID: " + order.orderId);
-    console.log("Customer: " + order.customer);
-    console.log("Item: " + order.item);
-    console.log("Quantity: " + order.quantity);
-    console.log("Total: " + order.total);
+processOrder().then((orderData)=>{
+    console.log("Order ID: " + orderData.orderId);
+    console.log("Customer: " + orderData.customer);
+    console.log("Item: " + orderData.item);
+    console.log("Quantity: " + orderData.quantity);
+    console.log("Total: " + orderData.total);
 })
-.catch((error)=>{
-    console.log(error);
+.catch((err)=>{
+    console.log(err);
 })
 .finally(()=>{
     console.log("Order Processing Complete.");
